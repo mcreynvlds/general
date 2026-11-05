@@ -47,20 +47,65 @@
     requestAnimationFrame(step);
   };
 
-  if ("IntersectionObserver" in window) {
+  var revealAll = function () {
+    document.querySelectorAll(".reveal, .stagger").forEach(function (el) { el.classList.add("is-visible", "stagger-done"); });
+  };
+
+  // Give each staggered child its index for the CSS delay
+  document.querySelectorAll(".stagger").forEach(function (group) {
+    Array.prototype.forEach.call(group.children, function (child, i) {
+      child.style.setProperty("--i", group.classList.contains("stagger--each") ? i % 3 : i);
+    });
+  });
+
+  if ("IntersectionObserver" in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        entry.target.querySelectorAll("[data-count]").forEach(animateCount);
-        if (entry.target.hasAttribute("data-count")) animateCount(entry.target);
-        io.unobserve(entry.target);
+        var el = entry.target;
+        el.classList.add("is-visible");
+        el.querySelectorAll("[data-count]").forEach(animateCount);
+        io.unobserve(el);
+        if (el.classList.contains("stagger")) {
+          // Once the entrance finishes, hand control back to the hover transitions
+          setTimeout(function () { el.classList.add("stagger-done"); }, 1000 + el.children.length * 90);
+        } else if (el.parentElement && el.parentElement.classList.contains("stagger--each")) {
+          setTimeout(function () { el.classList.add("item-done"); }, 1100);
+        }
       });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-    document.querySelectorAll(".reveal, .count-group").forEach(function (el) { io.observe(el); });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+    document.querySelectorAll(".reveal, .count-group, .stagger:not(.stagger--each)").forEach(function (el) { io.observe(el); });
+    document.querySelectorAll(".stagger--each > *").forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
+    revealAll();
   }
+
+  /* ---------- Scroll progress + hero parallax ---------- */
+  var bar = document.querySelector(".scroll-progress");
+  var heroMedia = document.querySelector(".hero__media");
+  var ticking = false;
+  var onScrollFx = function () {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.setProperty("--progress", max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+    if (heroMedia && !reduceMotion && window.scrollY < window.innerHeight * 1.2) {
+      heroMedia.style.setProperty("--parallax", (window.scrollY * 0.35).toFixed(1) + "px");
+    }
+    ticking = false;
+  };
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScrollFx); }
+  }, { passive: true });
+  onScrollFx();
+
+  /* ---------- Fade lazy images in as they load ---------- */
+  document.querySelectorAll('img[loading="lazy"]').forEach(function (im) {
+    if (im.complete && im.naturalWidth) return;
+    im.classList.add("img-fade");
+    var done = function () { im.classList.add("is-loaded"); };
+    im.addEventListener("load", done, { once: true });
+    im.addEventListener("error", done, { once: true });
+  });
 
   /* ---------- Gallery filters ---------- */
   var filters = document.querySelectorAll(".filter");
@@ -107,7 +152,17 @@
       index = (i + visible.length) % visible.length;
       var a = visible[index];
       var thumb = a.querySelector("img");
-      img.src = a.getAttribute("href");
+      if (box.classList.contains("is-open") && !reduceMotion) {
+        img.classList.add("is-swapping");
+        var src = a.getAttribute("href");
+        setTimeout(function () {
+          img.src = src;
+          var shown = function () { img.classList.remove("is-swapping"); };
+          if (img.complete) shown(); else img.addEventListener("load", shown, { once: true });
+        }, 180);
+      } else {
+        img.src = a.getAttribute("href");
+      }
       img.alt = thumb ? thumb.alt : "";
       caption.textContent = a.getAttribute("data-caption") || (thumb ? thumb.alt : "");
       count.textContent = (index + 1) + " / " + visible.length;

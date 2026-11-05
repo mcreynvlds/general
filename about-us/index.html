@@ -22,11 +22,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/styles.css">
+<meta name="view-transition" content="same-origin">
 <script src="/assets/js/main.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "GeneralContractor", "name": "DDN Construction", "url": "https://ddnconstruction.ca/", "logo": "https://ddnconstruction.ca/assets/img/logo.png", "image": "https://ddnconstruction.ca/assets/img/og-image.jpg", "description": "Barrie-based renovation and construction company delivering high-quality residential renovations throughout Barrie and Simcoe County.", "telephone": "+1-249-989-1441", "email": "info@ddnconstruction.ca", "address": {"@type": "PostalAddress", "addressLocality": "Barrie", "addressRegion": "ON", "addressCountry": "CA"}, "areaServed": ["Barrie", "Simcoe County", "Greater Toronto Area"], "founder": {"@type": "Person", "name": "Dragan Kosanovic"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="/" aria-label="DDN Construction home">
@@ -68,7 +70,7 @@
         <div><strong>Dragan Kosanovic</strong><span>Owner, DDN Construction</span></div>
       </div>
     </div>
-    <div class="media-stack reveal">
+    <div class="media-stack reveal reveal--media">
       <div class="media-stack__main"><img src="/assets/img/projects/allandale-15-lg.webp" srcset="/assets/img/projects/allandale-15-sm.webp 720w, /assets/img/projects/allandale-15-lg.webp 1600w" sizes="(min-width: 960px) 50vw, 100vw" width="1600" height="1066" alt="Open-concept dining area opening onto the backyard" loading="lazy" decoding="async"></div>
       <div class="media-stack__inset"><img src="/assets/img/projects/allandale-31-sm.webp" srcset="/assets/img/projects/allandale-31-sm.webp 720w, /assets/img/projects/allandale-31-lg.webp 1600w" sizes="(min-width: 960px) 25vw, 50vw" width="720" height="480" alt="Double vanity bathroom with round mirrors" loading="lazy" decoding="async"></div>
     </div>
@@ -84,7 +86,7 @@
       </div>
       <p class="lede">Accurate estimates, tight scope management, and a commitment to getting every detail right.</p>
     </div>
-    <div class="stats count-group reveal">
+    <div class="stats count-group stagger">
       <div><div class="stat__num"><span data-count="15">15</span><span class="unit">+</span></div><div class="stat__title">Years of experience</div><div class="stat__label">Over 15 years of hands-on renovation and construction experience on every project.</div></div>
       <div><div class="stat__num"><span data-count="100">100</span><span class="unit">%</span></div><div class="stat__title">Client satisfaction</div><div class="stat__label">We don’t consider a project complete until every detail meets your expectations.</div></div>
       <div><div class="stat__num"><span data-count="20">20</span><span class="unit">+</span></div><div class="stat__title">Projects built</div><div class="stat__label">Each completed with careful planning, skilled craftsmanship, and attention to detail.</div></div>
@@ -99,7 +101,7 @@
       <p class="eyebrow">What drives us</p>
       <h2 id="values-title">Vision, mission &amp; process</h2>
     </div>
-    <div class="values values--light reveal">
+    <div class="values values--light stagger">
       <div class="value"><div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Our vision</h3><p>To set the standard for trusted residential construction and renovations in Barrie and Simcoe County through quality work and lasting results.</p></div>
       <div class="value"><div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Our mission</h3><p>To deliver residential construction and renovation projects with honest pricing, careful planning, and craftsmanship that stands the test of time.</p></div>
       <div class="value"><div class="value__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></div><h3>Our process</h3><p>We guide every project from consultation to final walkthrough with clear scope, organized scheduling, and consistent attention to detail.</p></div>
@@ -116,7 +118,7 @@
       </div>
       <p class="lede">Explore a selection of DDN Construction projects across Barrie and Simcoe County — thoughtful renovations, clean finishes, and durable workmanship.</p>
     </div>
-    <div class="project-mosaic reveal">
+    <div class="project-mosaic stagger">
       <a href="/assets/img/projects/allandale-47-lg.webp" data-lightbox="featured" data-caption="Allandale Overlook — Backyard deck and in-ground pool"><img src="/assets/img/projects/allandale-47-lg.webp" srcset="/assets/img/projects/allandale-47-sm.webp 720w, /assets/img/projects/allandale-47-lg.webp 1600w" sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1066" alt="Backyard deck and in-ground pool" loading="lazy" decoding="async"></a>
       <a href="/assets/img/projects/allandale-12-lg.webp" data-lightbox="featured" data-caption="Allandale Overlook — Open living room with modern fireplace wall"><img src="/assets/img/projects/allandale-12-sm.webp" srcset="/assets/img/projects/allandale-12-sm.webp 720w, /assets/img/projects/allandale-12-lg.webp 1600w" sizes="(min-width: 900px) 25vw, 50vw" width="720" height="480" alt="Open living room with modern fireplace wall" loading="lazy" decoding="async"></a>
       <a href="/assets/img/projects/allandale-19-lg.webp" data-lightbox="featured" data-caption="Allandale Overlook — Renovated white kitchen with stainless appliances"><img src="/assets/img/projects/allandale-19-sm.webp" srcset="/assets/img/projects/allandale-19-sm.webp 720w, /assets/img/projects/allandale-19-lg.webp 1600w" sizes="(min-width: 900px) 25vw, 50vw" width="720" height="480" alt="Renovated white kitchen with stainless appliances" loading="lazy" decoding="async"></a>

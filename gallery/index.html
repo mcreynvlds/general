@@ -22,10 +22,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/styles.css">
+<meta name="view-transition" content="same-origin">
 <script src="/assets/js/main.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="/" aria-label="DDN Construction home">
@@ -57,17 +59,17 @@
 
 <section class="section" aria-labelledby="g-title">
   <div class="container">
-    <div class="section-head section-head--split">
+    <div class="section-head section-head--split reveal">
       <div>
         <p class="eyebrow">Residential home remodeling · Barrie, ON</p>
         <h2 id="g-title">Allandale Overlook</h2>
       </div>
       <p class="lede">A complete transformation, inside and out — from the kitchen, bathrooms and finished basement to the backyard deck and pool. Select a photo to view it full size.</p>
     </div>
-    <div class="filters" role="group" aria-label="Filter photos by area">
+    <div class="filters reveal" role="group" aria-label="Filter photos by area">
       <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span class="count">71</span></button><button class="filter" type="button" data-filter="exterior" aria-pressed="false">Exterior<span class="count">7</span></button><button class="filter" type="button" data-filter="kitchen" aria-pressed="false">Kitchen<span class="count">4</span></button><button class="filter" type="button" data-filter="living" aria-pressed="false">Living Spaces<span class="count">14</span></button><button class="filter" type="button" data-filter="bathrooms" aria-pressed="false">Bathrooms<span class="count">9</span></button><button class="filter" type="button" data-filter="bedrooms" aria-pressed="false">Bedrooms<span class="count">8</span></button><button class="filter" type="button" data-filter="basement" aria-pressed="false">Basement<span class="count">4</span></button><button class="filter" type="button" data-filter="outdoor" aria-pressed="false">Backyard &amp; Pool<span class="count">12</span></button><button class="filter" type="button" data-filter="aerial" aria-pressed="false">Aerial<span class="count">13</span></button>
     </div>
-    <div class="gallery">
+    <div class="gallery stagger stagger--each">
     <figure class="gallery__item" data-cat="exterior"><a href="/assets/img/projects/allandale-01-lg.webp" data-lightbox="gallery" data-caption="Allandale Overlook — Exterior of the remodeled home — photo 1 of 7"><img src="/assets/img/projects/allandale-01-sm.webp" srcset="/assets/img/projects/allandale-01-sm.webp 720w, /assets/img/projects/allandale-01-lg.webp 1600w" sizes="(min-width: 1000px) 33vw, (min-width: 600px) 50vw, 100vw" width="720" height="480" alt="Allandale Overlook: Exterior of the remodeled home — photo 1 of 7" loading="lazy" decoding="async"></a></figure>
     <figure class="gallery__item" data-cat="exterior"><a href="/assets/img/projects/allandale-02-lg.webp" data-lightbox="gallery" data-caption="Allandale Overlook — Exterior of the remodeled home — photo 2 of 7"><img src="/assets/img/projects/allandale-02-sm.webp" srcset="/assets/img/projects/allandale-02-sm.webp 720w, /assets/img/projects/allandale-02-lg.webp 1600w" sizes="(min-width: 1000px) 33vw, (min-width: 600px) 50vw, 100vw" width="720" height="480" alt="Allandale Overlook: Exterior of the remodeled home — photo 2 of 7" loading="lazy" decoding="async"></a></figure>
     <figure class="gallery__item" data-cat="exterior"><a href="/assets/img/projects/allandale-03-lg.webp" data-lightbox="gallery" data-caption="Allandale Overlook — Exterior of the remodeled home — photo 3 of 7"><img src="/assets/img/projects/allandale-03-sm.webp" srcset="/assets/img/projects/allandale-03-sm.webp 720w, /assets/img/projects/allandale-03-lg.webp 1600w" sizes="(min-width: 1000px) 33vw, (min-width: 600px) 50vw, 100vw" width="720" height="480" alt="Allandale Overlook: Exterior of the remodeled home — photo 3 of 7" loading="lazy" decoding="async"></a></figure>

@@ -22,12 +22,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/styles.css">
+<meta name="view-transition" content="same-origin">
 <script src="/assets/js/main.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "GeneralContractor", "name": "DDN Construction", "url": "https://ddnconstruction.ca/", "logo": "https://ddnconstruction.ca/assets/img/logo.png", "image": "https://ddnconstruction.ca/assets/img/og-image.jpg", "description": "Barrie-based renovation and construction company delivering high-quality residential renovations throughout Barrie and Simcoe County.", "telephone": "+1-249-989-1441", "email": "info@ddnconstruction.ca", "address": {"@type": "PostalAddress", "addressLocality": "Barrie", "addressRegion": "ON", "addressCountry": "CA"}, "areaServed": ["Barrie", "Simcoe County", "Greater Toronto Area"], "founder": {"@type": "Person", "name": "Dragan Kosanovic"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What areas does DDN serve?", "acceptedAnswer": {"@type": "Answer", "text": "We’re based in Barrie and serve homeowners across Simcoe County and surrounding communities."}}, {"@type": "Question", "name": "What type of projects do you take on?", "acceptedAnswer": {"@type": "Answer", "text": "We focus on residential renovations and construction, including kitchens, bathrooms, basements, full-home remodels, and interior upgrades."}}, {"@type": "Question", "name": "Do you provide free estimates?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — after a quick conversation and site visit (when needed), we’ll provide a clear estimate based on your scope and goals."}}, {"@type": "Question", "name": "How long do renovations usually take?", "acceptedAnswer": {"@type": "Answer", "text": "Timelines vary by project size and complexity, but we’ll outline a realistic schedule before work begins and keep you updated throughout."}}, {"@type": "Question", "name": "Will I get a detailed quote?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Our quotes clearly define scope, materials allowances (if applicable), and what’s included so you know what to expect."}}, {"@type": "Question", "name": "Do you handle permits and inspections?", "acceptedAnswer": {"@type": "Answer", "text": "If permits are required, we can guide you through the process and coordinate the necessary steps to keep the project compliant."}}, {"@type": "Question", "name": "How do you handle changes during the project?", "acceptedAnswer": {"@type": "Answer", "text": "Any changes are discussed and approved before moving forward, with clear pricing and updated timelines when needed."}}, {"@type": "Question", "name": "How do I get started with DDN Construction?", "acceptedAnswer": {"@type": "Answer", "text": "Fill out our contact form or call us with a few details about your project, and we’ll book a consultation to plan next steps."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="/" aria-label="DDN Construction home">
@@ -63,14 +65,14 @@
       <p class="eyebrow">Get in touch</p>
       <h2 id="contact-title">Book a free consultation</h2>
       <p class="lede">Call, email, or use the form. We’re happy to talk through ideas, budgets and timelines — no pressure.</p>
-      <ul class="contact-list">
+      <ul class="contact-list stagger">
         <li><span class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Phone</small><a href="tel:+12499891441">249-989-1441</a></div></li>
         <li><span class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><div><small>Email</small><a href="mailto:info@ddnconstruction.ca">info@ddnconstruction.ca</a></div></li>
         <li><span class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><small>Service area</small><span>Barrie, Simcoe County &amp; the GTA</span></div></li>
         <li><span class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><small>Office hours</small><span>Mon – Fri, 9:00 AM – 6:00 PM</span></div></li>
       </ul>
     </div>
-    <div class="reveal">
+    <div class="reveal reveal--right">
       <div class="form-card">
         <h3>Request a quote</h3>
         <p>Send us a few details and we’ll follow up with a clear quote, timeline expectations, and the best next step for your renovation.</p>
@@ -110,7 +112,7 @@
       <h2 id="faq-title">Quick answers about working with DDN</h2>
       <p class="lede">Don’t see your question? Give us a call at <a href="tel:+12499891441">249-989-1441</a>.</p>
     </div>
-    <div class="faq reveal">
+    <div class="faq stagger">
         <details open><summary>What areas does DDN serve?</summary><p>We’re based in Barrie and serve homeowners across Simcoe County and surrounding communities.</p></details>
         <details><summary>What type of projects do you take on?</summary><p>We focus on residential renovations and construction, including kitchens, bathrooms, basements, full-home remodels, and interior upgrades.</p></details>
         <details><summary>Do you provide free estimates?</summary><p>Yes — after a quick conversation and site visit (when needed), we’ll provide a clear estimate based on your scope and goals.</p></details>
