@@ -561,7 +561,9 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* Header drops in on load */
-.site-header { animation: header-in .9s var(--ease) both; }
+.site-header { animation: header-in .9s var(--ease) backwards; }
+/* A transform or backdrop-filter on the header would trap the fixed mobile menu inside the header bar */
+body.nav-open .site-header { animation: none; transform: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 @keyframes header-in { from { transform: translateY(-100%); opacity: 0; } }
 
 /* Hero load-in sequence */
