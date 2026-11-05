@@ -83,7 +83,10 @@
 
   /* ---------- Scroll progress + hero parallax ---------- */
   var bar = document.querySelector(".scroll-progress");
-  var heroMedia = document.querySelector(".hero__media");
+  // Parallax only with a mouse/trackpad: on touch devices scroll events lag the
+  // native scroll, which makes the image jitter.
+  var canParallax = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var heroMedia = canParallax ? document.querySelector(".hero__media") : null;
   var ticking = false;
   var onScrollFx = function () {
     var max = document.documentElement.scrollHeight - window.innerHeight;

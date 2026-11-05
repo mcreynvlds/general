@@ -244,6 +244,12 @@ body.nav-open .site-header, body.nav-open .site-header .site-header__inner {
   display: flex; align-items: flex-end; color: #fff; background: var(--ink); overflow: hidden; isolation: isolate;
 }
 .hero__media { position: absolute; inset: 0; z-index: -2; transform: translate3d(0, var(--parallax, 0px), 0); will-change: transform; }
+/* Touch devices: no parallax layer, no live blur over the photo, and a short intro zoom — keeps scrolling smooth */
+@media (hover: none), (pointer: coarse) {
+  .hero__media { transform: none; will-change: auto; }
+  .hero__media img { animation-duration: 2.5s; }
+  .hero .hero__stats > div { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(15,18,24,.5); }
+}
 .hero__media img { width: 100%; height: 100%; object-fit: cover; animation: hero-zoom 18s var(--ease) both; }
 @keyframes hero-zoom { from { transform: scale(1.1); } to { transform: scale(1); } }
 .hero::before {
